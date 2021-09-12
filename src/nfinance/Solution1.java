@@ -1,4 +1,4 @@
-package NaverFinancial;
+package nfinance;
 
 public class Solution1 {
 

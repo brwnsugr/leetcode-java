@@ -22,7 +22,7 @@ public class Solution {
     }
     return dp[numberOfCourse][availableTime];
   }
-  
+
   public static void main(String[] args) {
 
     Scanner ints = new Scanner(System.in);

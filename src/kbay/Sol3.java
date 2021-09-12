@@ -1,4 +1,4 @@
-package ebay;
+package kbay;
 
 public class Sol3 {
 

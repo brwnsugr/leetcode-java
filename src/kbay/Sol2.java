@@ -1,6 +1,4 @@
-package ebay;
-
-import java.util.ArrayList;
+package kbay;
 
 public class Sol2 {
 

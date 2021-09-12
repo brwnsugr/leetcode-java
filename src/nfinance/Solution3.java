@@ -1,4 +1,4 @@
-package NaverFinancial;
+package nfinance;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
