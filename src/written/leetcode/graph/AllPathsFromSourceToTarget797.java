@@ -1,11 +1,9 @@
 package written.leetcode.graph;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class AllPathsFromoSourceToTarget797 {
+public class AllPathsFromSourceToTarget797 {
 
   private List<List<Integer>> pathCases;
   private int target;
@@ -37,10 +35,10 @@ public class AllPathsFromoSourceToTarget797 {
 
   public static void main(String[] args) {
 
-    AllPathsFromoSourceToTarget797 allPathsFromoSourceToTarget797 = new AllPathsFromoSourceToTarget797();
+    AllPathsFromSourceToTarget797 allPathsFromSourceToTarget797 = new AllPathsFromSourceToTarget797();
 
     int[][] graph1 = new int[][]{{1,2},{3},{3}, {}};
-    allPathsFromoSourceToTarget797.allPathsSourceTarget(graph1);
+    allPathsFromSourceToTarget797.allPathsSourceTarget(graph1);
 
 
   }
