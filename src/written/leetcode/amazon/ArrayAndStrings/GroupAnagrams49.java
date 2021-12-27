@@ -1,2 +1,5 @@
-package written.leetcode.amazon.ArrayAndStrings;public class GroupAnagrams49 {
+package written.leetcode.amazon.ArrayAndStrings;
+
+public class GroupAnagrams49 {
+
 }

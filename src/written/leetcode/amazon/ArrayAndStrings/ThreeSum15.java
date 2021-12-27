@@ -12,47 +12,37 @@ import java.util.stream.Collectors;
 
 public class ThreeSum15 {
 
-  Set<List<Integer>> combSet = new HashSet<>();
-
   public List<List<Integer>> threeSum(int[] nums) {
     List<List<Integer>> answers = new ArrayList<>();
-
-    for(int i = 0; i < nums.length; i++) {
-      int target = 0 - nums[i];
-      Set<int[]> twoCombs = getTwoSums(target, i, nums);
-      if(twoCombs.size() != 0) {
-        for(int[] twoComb : twoCombs) {
-          combSet.add(Arrays.asList(twoComb[0],twoComb[1],twoComb[2]));
-        }
+    Arrays.sort(nums);
+    for(int i = 0; i < nums.length - 2; i++){
+      if(nums[i] > 0) break;
+      if(i == 0 || nums[i] != nums[i-1]) {
+        appendTwoSums(i, nums, answers);
       }
-    }
-    for(List<Integer> comb : combSet) {
-      answers.add(comb);
     }
     return answers;
   }
 
-  private Set<int[]> getTwoSums(int target, int currIdx, int [] nums) {
-    Map<Integer, Integer> m = new HashMap<>();
-    Set<int[]> twoSums = new HashSet<>();
-    for(int i = 0; i < nums.length; i++) {
-      if(i==currIdx) continue;
-      int complement = target - nums[i];
-      if(m.containsKey(complement) && m.get(complement) != i) {
-        int[] arr = new int[]{nums[currIdx], complement, nums[i]};
-        Arrays.sort(arr);
-        if(!combSet.contains(Arrays.stream(arr).boxed().collect(Collectors.toList()))) {
-          twoSums.add(arr);
-        }
+  private void appendTwoSums(int startIdx, int [] nums, List<List<Integer>> res) {
+    Set<Integer> elementSeen = new HashSet<>();
+    for(int j = startIdx + 1; j < nums.length; j++) {
+      int complement = -nums[startIdx] -nums[j];
+      if(elementSeen.contains(complement)) {
+        res.add(Arrays.asList(nums[startIdx], nums[j], complement));
+        while(j < nums.length - 1 && nums[j+1] == nums[j]) j++;
       }
-      m.put(nums[i], i);
+      elementSeen.add(nums[j]);
     }
-    return twoSums;
   }
 
 
   public static void main(String[] args) {
     ThreeSum15 threeSum15 = new ThreeSum15();
-    threeSum15.threeSum(new int[]{-1,0,1,2,-1,-4});
+    int[] arr1 = new int[]{-1, 0, 1, 2, -1, -4};
+    int[] arr2 = new int[]{-4,-1,-1,3,5};
+    List<List<Integer>> lists = threeSum15.threeSum(arr2);
+
+    System.out.println("dd");
   }
 }
