@@ -22,6 +22,16 @@ public class ValidBinarySearchTree98 {
     return;
   }
 
+  public boolean isValidBST2(TreeNode root) {
+    return isValid(root, null, null);
+  }
+
+  private boolean isValid(TreeNode currNode, Integer low, Integer high) {
+    if(currNode == null) return true;
+    if((low != null && currNode.val <= low) || (high != null && currNode.val >= high)) return false;
+    return isValid(currNode.right, currNode.val, high) && isValid(currNode.left, low, currNode.val);
+  }
+
 
   public static void main(String[] args) {
     ValidBinarySearchTree98 validBinarySearchTree98 = new ValidBinarySearchTree98();
