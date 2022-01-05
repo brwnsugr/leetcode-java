@@ -20,8 +20,6 @@ public class BinaryTreeMaximumPathSum124 {
     return currNode.val + Math.max(leftMax, rightMax);
   }
 
-
-
   public static void main(String[] args) {
 
   }
