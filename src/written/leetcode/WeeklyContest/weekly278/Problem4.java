@@ -81,7 +81,7 @@ public class Problem4 {
     x = x | 1<<2;
 
     System.out.println("x is " + x);
-//    problem4.groupStrings(new String[]{"dd"});
+    problem4.groupStrings(new String[]{"dd"});
 
   }
 
